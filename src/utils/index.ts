@@ -8,9 +8,16 @@ import type { ParamsType, Query } from "./types";
 
 export type ResultType = string;
 export interface CommandOptionTypes {
+  // value of command
   value: string;
+  
+  // label of command
   label: string;
+
+  // callback function for command
   callback: (params?: ParamsType) => Array<ResultType>;
+  
+  // description of command poping up on tooltip
   description: string;
 }
 
@@ -47,10 +54,12 @@ export const CommandsOptions: CommandOptionTypes[] = [
   },
 ];
 
+// check if there is anycommand exist in the sentence
 export const checkPartialExistCommand = (value: string): boolean => {
   return value.startsWith("/");
 };
 
+// check if there is any specific command exist in the sentence
 export const checkCommandExist = (value: string): boolean => {
   const initialString = value.split(" ");
   return (
@@ -58,12 +67,14 @@ export const checkCommandExist = (value: string): boolean => {
   );
 };
 
+// get all the partially written commands list
 export const filterCommands = (options: Option[], value: string): Option[] => {
   return options.filter((option) =>
     option.value.startsWith(value.split(" ")[0] || "")
   );
 };
 
+// get specific command from sentence
 export const getCommand = (query: string): string => {
   for (const command of CommandsOptions) {
     if (query.startsWith(command.value)) {
@@ -73,6 +84,7 @@ export const getCommand = (query: string): string => {
   return "";
 };
 
+// get params from sentence for the commands
 export const getParams = (query: string, cmd: string): ParamsType => {
   const values = query.split(cmd);
 
@@ -82,6 +94,7 @@ export const getParams = (query: string, cmd: string): ParamsType => {
   return "";
 };
 
+// convert sentence into command and params pair
 export const parseQuery = (query: string): Query => {
   if (checkCommandExist(query)) {
     const cmd = getCommand(query);
@@ -97,6 +110,7 @@ export const parseQuery = (query: string): Query => {
   };
 };
 
+// convert string of numbers into array of number
 export const grabNumbersFromsentence = (params: string): Array<number> => {
   if (params && params.length > 0) {
     const ignoreKeywords = [" ", "", null];
