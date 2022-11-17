@@ -29,7 +29,7 @@ export default function History({ historyCommands = [] }: HistoryListProps) {
 
   return (
     <UnorderedList
-      maxHeight="700px"
+      maxHeight="80vh"
       overflowY="auto"
       spacing={3}
       listStyleType="none"
