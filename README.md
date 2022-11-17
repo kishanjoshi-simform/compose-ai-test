@@ -33,25 +33,17 @@ https://www.loom.com/share/e883faf079e840b9bf26bc0f509e7b37
 
 
 #### Project requirements:
-
-
-    This project is about how can we automate tasks by having /slashcommands and parameters to those commands
+- This project is about how can we automate tasks by having /slashcommands and parameters to those commands
 
 #### Usage
-
-
-    Start typing /help in the textbox
+- Start typing /help in the textbox
     
 #### Assumptions 
-
-
-    Assumptions are taken for simple commands. Achived functionality to match slack slash commands
+- Assumptions are taken for simple commands. Achived functionality to match slack slash commands
 
 #### Limitations 
-
-
-    - There is no navigation through arrow keys. You have to type command or select from menu.
-    - Commands will not be detected if sentence is not starting from /slashcommand
+- There is no navigation through arrow keys. You have to type command or select from menu.
+- Commands will not be detected if sentence is not starting from /slashcommand
 
 
 #### Milestone
